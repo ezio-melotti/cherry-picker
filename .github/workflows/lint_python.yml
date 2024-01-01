@@ -9,7 +9,9 @@ jobs:
         with:
           cache: pip
           cache-dependency-path: .github/workflows/lint_python.yml
+      - run: pip --version
       - run: pip install --upgrade pip wheel
+      - run: pip --version
         # TODO: remove setuptools installation when safety==2.4.0 is released
       - run: pip install --upgrade bandit black codespell flake8 flake8-bugbear
                          flake8-comprehensions isort mypy pyupgrade safety setuptools
@@ -22,4 +24,5 @@ jobs:
       - run: pip install --editable .
       - run: mypy --ignore-missing-imports --install-types --non-interactive .
       - run: shopt -s globstar && pyupgrade --py38-plus **/*.py || true
+      - run: pip --version
       - run: safety check
