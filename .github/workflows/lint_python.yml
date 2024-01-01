@@ -26,4 +26,4 @@ jobs:
       - run: shopt -s globstar && pyupgrade --py38-plus **/*.py || true
       - run: pip --version
       - run: pip list
-      - run: safety check
+      - run: safety --debug check --full-report
