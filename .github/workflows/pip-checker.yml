@@ -1,7 +1,7 @@
 name: Check installed pip versions
 on: [pull_request, push, workflow_dispatch]
 jobs:
-  lint_python:
+  check_pip:
     runs-on: ubuntu-latest
     steps:
       - run: ls -l /opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages
