@@ -28,4 +28,5 @@ jobs:
       - run: shopt -s globstar && pyupgrade --py38-plus **/*.py || true
       - run: pip --version
       - run: pip list
+      - run: ls -l /opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages
       - run: safety --debug check --full-report
