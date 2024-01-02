@@ -15,7 +15,7 @@ jobs:
           cache-dependency-path: .github/workflows/lint_python.yml
       - run: ls -l /opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages | grep pip
       - run: pip --version
-      - run: pip install --upgrade pip wheel
+      - run: pip install --upgrade -I pip wheel
       - run: pip --version
         # TODO: remove setuptools installation when safety==2.4.0 is released
       - run: pip install --upgrade bandit black codespell flake8 flake8-bugbear
